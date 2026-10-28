@@ -111,6 +111,7 @@ section h2+*{margin-top:18px}
 .buttons{display:grid;gap:8px;margin-bottom:26px}
 .prose{max-width:40em;display:grid;gap:10px}
 .prose h2{font-size:1.1rem;margin-top:12px}
+.lead+h2{margin-top:36px}
 /* cta */
 .sec-cta{background:var(--tile);color:#fff}
 .cta{display:grid;gap:12px}
