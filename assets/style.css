@@ -133,3 +133,99 @@ section h2+*{margin-top:18px}
 .lineup small{display:block;color:var(--muted);font-size:.8rem;margin-top:4px}
 .foot nav a{color:var(--muted);text-decoration:none}
 .copy{margin-top:20px;font-size:.78rem}
+/* ===== 2026-11-18 作り直し: 事業ごとの色・ロゴが飛び出す演出・活動ブログ =====
+   t-home = KEITO（ロゴの深緑＋麻の葉） / t-zero = ZERO ONE（宇宙の黒＋ネオンの青緑） / t-ai = AI秘書ハヤテ（夜の紺＋みかん＋トサカの赤） */
+:root{--brand:#1f3b2d;--brand-deep:#0f1d16;--font-latin:"Montserrat","Zen Kaku Gothic New","Hiragino Sans",system-ui,sans-serif}
+.logo{display:inline-flex;align-items:center;gap:8px}
+.logo .mark{width:30px;height:30px;flex:none;background:currentColor;-webkit-mask:url(keito-mark.png) center/contain no-repeat;mask:url(keito-mark.png) center/contain no-repeat}
+.logo span{margin-left:0}
+.band{height:6px;background:linear-gradient(90deg,var(--brand) 0 55%,var(--mikan) 55% 80%,var(--leaf) 80%)}
+.eyebrow{font-family:var(--font-latin);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--mikan);flex:none}
+.eyebrow a{color:inherit}
+.foot-tag{font-family:var(--font-latin);font-size:.72rem;letter-spacing:.14em;font-weight:700;color:var(--ink);margin-bottom:8px}
+.sec-cta{background:var(--brand)}
+.snsrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.sns{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:7px 15px 7px 8px;font-size:.86rem;font-weight:700;text-decoration:none;color:var(--ink);background:var(--surface);min-height:40px}
+.sns b{font-family:var(--font-latin);font-size:.66rem;letter-spacing:.08em;background:var(--ink);color:var(--paper);border-radius:99px;padding:4px 10px}
+/* 動き: 画面に入ったら下からふわっと */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+/* ---- トップ: ロゴが奥から飛び出す ---- */
+.khero{position:relative;overflow:hidden;isolation:isolate;text-align:center;color:#f5f3ec;padding-block:36px 60px;background:radial-gradient(120% 80% at 50% 22%,#2b5a43 0,#17301f 48%,#0c1711 100%)}
+.khero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='76.21' viewBox='0 0 44 76.21'%3E%3Cpath d='M-22.0 -38.1L22.0 -38.1M22.0 -38.1L0.0 0.0M0.0 0.0L-22.0 -38.1M-22.0 -38.1L0.0 -25.4M22.0 -38.1L0.0 -25.4M0.0 0.0L0.0 -25.4M22.0 -38.1L0.0 0.0M0.0 0.0L44.0 0.0M44.0 0.0L22.0 -38.1M22.0 -38.1L22.0 -12.7M0.0 0.0L22.0 -12.7M44.0 0.0L22.0 -12.7M22.0 -38.1L66.0 -38.1M66.0 -38.1L44.0 0.0M44.0 0.0L22.0 -38.1M22.0 -38.1L44.0 -25.4M66.0 -38.1L44.0 -25.4M44.0 0.0L44.0 -25.4M66.0 -38.1L44.0 0.0M44.0 0.0L88.0 0.0M88.0 0.0L66.0 -38.1M66.0 -38.1L66.0 -12.7M44.0 0.0L66.0 -12.7M88.0 0.0L66.0 -12.7M66.0 -38.1L110.0 -38.1M110.0 -38.1L88.0 0.0M88.0 0.0L66.0 -38.1M66.0 -38.1L88.0 -25.4M110.0 -38.1L88.0 -25.4M88.0 0.0L88.0 -25.4M110.0 -38.1L88.0 0.0M88.0 0.0L132.0 0.0M132.0 0.0L110.0 -38.1M110.0 -38.1L110.0 -12.7M88.0 0.0L110.0 -12.7M132.0 0.0L110.0 -12.7M110.0 -38.1L154.0 -38.1M154.0 -38.1L132.0 0.0M132.0 0.0L110.0 -38.1M110.0 -38.1L132.0 -25.4M154.0 -38.1L132.0 -25.4M132.0 0.0L132.0 -25.4M154.0 -38.1L132.0 0.0M132.0 0.0L176.0 0.0M176.0 0.0L154.0 -38.1M154.0 -38.1L154.0 -12.7M132.0 0.0L154.0 -12.7M176.0 0.0L154.0 -12.7M-44.0 0.0L0.0 0.0M0.0 0.0L-22.0 38.1M-22.0 38.1L-44.0 0.0M-44.0 0.0L-22.0 12.7M0.0 0.0L-22.0 12.7M-22.0 38.1L-22.0 12.7M0.0 0.0L-22.0 38.1M-22.0 38.1L22.0 38.1M22.0 38.1L0.0 0.0M0.0 0.0L0.0 25.4M-22.0 38.1L0.0 25.4M22.0 38.1L0.0 25.4M0.0 0.0L44.0 0.0M44.0 0.0L22.0 38.1M22.0 38.1L0.0 0.0M0.0 0.0L22.0 12.7M44.0 0.0L22.0 12.7M22.0 38.1L22.0 12.7M44.0 0.0L22.0 38.1M22.0 38.1L66.0 38.1M66.0 38.1L44.0 0.0M44.0 0.0L44.0 25.4M22.0 38.1L44.0 25.4M66.0 38.1L44.0 25.4M44.0 0.0L88.0 0.0M88.0 0.0L66.0 38.1M66.0 38.1L44.0 0.0M44.0 0.0L66.0 12.7M88.0 0.0L66.0 12.7M66.0 38.1L66.0 12.7M88.0 0.0L66.0 38.1M66.0 38.1L110.0 38.1M110.0 38.1L88.0 0.0M88.0 0.0L88.0 25.4M66.0 38.1L88.0 25.4M110.0 38.1L88.0 25.4M88.0 0.0L132.0 0.0M132.0 0.0L110.0 38.1M110.0 38.1L88.0 0.0M88.0 0.0L110.0 12.7M132.0 0.0L110.0 12.7M110.0 38.1L110.0 12.7M132.0 0.0L110.0 38.1M110.0 38.1L154.0 38.1M154.0 38.1L132.0 0.0M132.0 0.0L132.0 25.4M110.0 38.1L132.0 25.4M154.0 38.1L132.0 25.4M-22.0 38.1L22.0 38.1M22.0 38.1L0.0 76.2M0.0 76.2L-22.0 38.1M-22.0 38.1L0.0 50.8M22.0 38.1L0.0 50.8M0.0 76.2L0.0 50.8M22.0 38.1L0.0 76.2M0.0 76.2L44.0 76.2M44.0 76.2L22.0 38.1M22.0 38.1L22.0 63.5M0.0 76.2L22.0 63.5M44.0 76.2L22.0 63.5M22.0 38.1L66.0 38.1M66.0 38.1L44.0 76.2M44.0 76.2L22.0 38.1M22.0 38.1L44.0 50.8M66.0 38.1L44.0 50.8M44.0 76.2L44.0 50.8M66.0 38.1L44.0 76.2M44.0 76.2L88.0 76.2M88.0 76.2L66.0 38.1M66.0 38.1L66.0 63.5M44.0 76.2L66.0 63.5M88.0 76.2L66.0 63.5M66.0 38.1L110.0 38.1M110.0 38.1L88.0 76.2M88.0 76.2L66.0 38.1M66.0 38.1L88.0 50.8M110.0 38.1L88.0 50.8M88.0 76.2L88.0 50.8M110.0 38.1L88.0 76.2M88.0 76.2L132.0 76.2M132.0 76.2L110.0 38.1M110.0 38.1L110.0 63.5M88.0 76.2L110.0 63.5M132.0 76.2L110.0 63.5M110.0 38.1L154.0 38.1M154.0 38.1L132.0 76.2M132.0 76.2L110.0 38.1M110.0 38.1L132.0 50.8M154.0 38.1L132.0 50.8M132.0 76.2L132.0 50.8M154.0 38.1L132.0 76.2M132.0 76.2L176.0 76.2M176.0 76.2L154.0 38.1M154.0 38.1L154.0 63.5M132.0 76.2L154.0 63.5M176.0 76.2L154.0 63.5M-44.0 76.2L0.0 76.2M0.0 76.2L-22.0 114.3M-22.0 114.3L-44.0 76.2M-44.0 76.2L-22.0 88.9M0.0 76.2L-22.0 88.9M-22.0 114.3L-22.0 88.9M0.0 76.2L-22.0 114.3M-22.0 114.3L22.0 114.3M22.0 114.3L0.0 76.2M0.0 76.2L0.0 101.6M-22.0 114.3L0.0 101.6M22.0 114.3L0.0 101.6M0.0 76.2L44.0 76.2M44.0 76.2L22.0 114.3M22.0 114.3L0.0 76.2M0.0 76.2L22.0 88.9M44.0 76.2L22.0 88.9M22.0 114.3L22.0 88.9M44.0 76.2L22.0 114.3M22.0 114.3L66.0 114.3M66.0 114.3L44.0 76.2M44.0 76.2L44.0 101.6M22.0 114.3L44.0 101.6M66.0 114.3L44.0 101.6M44.0 76.2L88.0 76.2M88.0 76.2L66.0 114.3M66.0 114.3L44.0 76.2M44.0 76.2L66.0 88.9M88.0 76.2L66.0 88.9M66.0 114.3L66.0 88.9M88.0 76.2L66.0 114.3M66.0 114.3L110.0 114.3M110.0 114.3L88.0 76.2M88.0 76.2L88.0 101.6M66.0 114.3L88.0 101.6M110.0 114.3L88.0 101.6M88.0 76.2L132.0 76.2M132.0 76.2L110.0 114.3M110.0 114.3L88.0 76.2M88.0 76.2L110.0 88.9M132.0 76.2L110.0 88.9M110.0 114.3L110.0 88.9M132.0 76.2L110.0 114.3M110.0 114.3L154.0 114.3M154.0 114.3L132.0 76.2M132.0 76.2L132.0 101.6M110.0 114.3L132.0 101.6M154.0 114.3L132.0 101.6' fill='none' stroke='%23f5f3ec' stroke-width='.7'/%3E%3C/svg%3E");opacity:.13;-webkit-mask:radial-gradient(90% 70% at 50% 26%,#000 20%,transparent 80%);mask:radial-gradient(90% 70% at 50% 26%,#000 20%,transparent 80%)}
+.khero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.klogo{display:block;width:min(68vw,330px);height:auto;margin:0 auto 20px;filter:drop-shadow(0 0 26px rgba(245,243,236,.28))}
+.khero .eyebrow{justify-content:center;color:#c8d4cb}
+.khero h1{font-size:clamp(1.75rem,6vw,3rem)}
+.khero h1 .m{color:#f6a465}.khero h1 .t{color:#9fdcc4}
+.khero .lead{color:#d3dcd4;margin-inline:auto}
+.khero .actions{justify-content:center}
+.khero .btn{border-color:#f5f3ec;color:#f5f3ec}
+.khero .btn.solid{background:#e2741f;border-color:#e2741f;color:#fff}
+.khero .facts{margin-inline:auto;text-align:left}
+.khero .facts div{border-top-color:rgba(245,243,236,.5)}
+.khero .facts dt{color:#b9c7bd}
+@media (prefers-reduced-motion:no-preference){
+  .js .klogo{animation:kpop 1.7s cubic-bezier(.16,.84,.24,1) .25s both}
+  .js .khero .rise{animation:krise .9s ease 1.55s both}
+  .js .khero .rise:nth-of-type(2){animation-delay:1.7s}
+  .js .khero .lead.rise{animation-delay:1.85s}.js .khero .actions.rise{animation-delay:2s}.js .khero .facts.rise{animation-delay:2.15s}
+}
+@keyframes kpop{0%{transform:scale(.02);opacity:0;filter:blur(16px) drop-shadow(0 0 0 rgba(245,243,236,0))}45%{opacity:1}72%{transform:scale(1.09);filter:blur(0) drop-shadow(0 0 60px rgba(245,243,236,.75))}100%{transform:scale(1);filter:blur(0) drop-shadow(0 0 26px rgba(245,243,236,.28))}}
+@keyframes krise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* 名前の由来 */
+.origin{display:grid;gap:26px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.plate{background:#f5f3ec url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='76.21' viewBox='0 0 44 76.21'%3E%3Cpath d='M-22.0 -38.1L22.0 -38.1M22.0 -38.1L0.0 0.0M0.0 0.0L-22.0 -38.1M-22.0 -38.1L0.0 -25.4M22.0 -38.1L0.0 -25.4M0.0 0.0L0.0 -25.4M22.0 -38.1L0.0 0.0M0.0 0.0L44.0 0.0M44.0 0.0L22.0 -38.1M22.0 -38.1L22.0 -12.7M0.0 0.0L22.0 -12.7M44.0 0.0L22.0 -12.7M22.0 -38.1L66.0 -38.1M66.0 -38.1L44.0 0.0M44.0 0.0L22.0 -38.1M22.0 -38.1L44.0 -25.4M66.0 -38.1L44.0 -25.4M44.0 0.0L44.0 -25.4M66.0 -38.1L44.0 0.0M44.0 0.0L88.0 0.0M88.0 0.0L66.0 -38.1M66.0 -38.1L66.0 -12.7M44.0 0.0L66.0 -12.7M88.0 0.0L66.0 -12.7M66.0 -38.1L110.0 -38.1M110.0 -38.1L88.0 0.0M88.0 0.0L66.0 -38.1M66.0 -38.1L88.0 -25.4M110.0 -38.1L88.0 -25.4M88.0 0.0L88.0 -25.4M110.0 -38.1L88.0 0.0M88.0 0.0L132.0 0.0M132.0 0.0L110.0 -38.1M110.0 -38.1L110.0 -12.7M88.0 0.0L110.0 -12.7M132.0 0.0L110.0 -12.7M110.0 -38.1L154.0 -38.1M154.0 -38.1L132.0 0.0M132.0 0.0L110.0 -38.1M110.0 -38.1L132.0 -25.4M154.0 -38.1L132.0 -25.4M132.0 0.0L132.0 -25.4M154.0 -38.1L132.0 0.0M132.0 0.0L176.0 0.0M176.0 0.0L154.0 -38.1M154.0 -38.1L154.0 -12.7M132.0 0.0L154.0 -12.7M176.0 0.0L154.0 -12.7M-44.0 0.0L0.0 0.0M0.0 0.0L-22.0 38.1M-22.0 38.1L-44.0 0.0M-44.0 0.0L-22.0 12.7M0.0 0.0L-22.0 12.7M-22.0 38.1L-22.0 12.7M0.0 0.0L-22.0 38.1M-22.0 38.1L22.0 38.1M22.0 38.1L0.0 0.0M0.0 0.0L0.0 25.4M-22.0 38.1L0.0 25.4M22.0 38.1L0.0 25.4M0.0 0.0L44.0 0.0M44.0 0.0L22.0 38.1M22.0 38.1L0.0 0.0M0.0 0.0L22.0 12.7M44.0 0.0L22.0 12.7M22.0 38.1L22.0 12.7M44.0 0.0L22.0 38.1M22.0 38.1L66.0 38.1M66.0 38.1L44.0 0.0M44.0 0.0L44.0 25.4M22.0 38.1L44.0 25.4M66.0 38.1L44.0 25.4M44.0 0.0L88.0 0.0M88.0 0.0L66.0 38.1M66.0 38.1L44.0 0.0M44.0 0.0L66.0 12.7M88.0 0.0L66.0 12.7M66.0 38.1L66.0 12.7M88.0 0.0L66.0 38.1M66.0 38.1L110.0 38.1M110.0 38.1L88.0 0.0M88.0 0.0L88.0 25.4M66.0 38.1L88.0 25.4M110.0 38.1L88.0 25.4M88.0 0.0L132.0 0.0M132.0 0.0L110.0 38.1M110.0 38.1L88.0 0.0M88.0 0.0L110.0 12.7M132.0 0.0L110.0 12.7M110.0 38.1L110.0 12.7M132.0 0.0L110.0 38.1M110.0 38.1L154.0 38.1M154.0 38.1L132.0 0.0M132.0 0.0L132.0 25.4M110.0 38.1L132.0 25.4M154.0 38.1L132.0 25.4M-22.0 38.1L22.0 38.1M22.0 38.1L0.0 76.2M0.0 76.2L-22.0 38.1M-22.0 38.1L0.0 50.8M22.0 38.1L0.0 50.8M0.0 76.2L0.0 50.8M22.0 38.1L0.0 76.2M0.0 76.2L44.0 76.2M44.0 76.2L22.0 38.1M22.0 38.1L22.0 63.5M0.0 76.2L22.0 63.5M44.0 76.2L22.0 63.5M22.0 38.1L66.0 38.1M66.0 38.1L44.0 76.2M44.0 76.2L22.0 38.1M22.0 38.1L44.0 50.8M66.0 38.1L44.0 50.8M44.0 76.2L44.0 50.8M66.0 38.1L44.0 76.2M44.0 76.2L88.0 76.2M88.0 76.2L66.0 38.1M66.0 38.1L66.0 63.5M44.0 76.2L66.0 63.5M88.0 76.2L66.0 63.5M66.0 38.1L110.0 38.1M110.0 38.1L88.0 76.2M88.0 76.2L66.0 38.1M66.0 38.1L88.0 50.8M110.0 38.1L88.0 50.8M88.0 76.2L88.0 50.8M110.0 38.1L88.0 76.2M88.0 76.2L132.0 76.2M132.0 76.2L110.0 38.1M110.0 38.1L110.0 63.5M88.0 76.2L110.0 63.5M132.0 76.2L110.0 63.5M110.0 38.1L154.0 38.1M154.0 38.1L132.0 76.2M132.0 76.2L110.0 38.1M110.0 38.1L132.0 50.8M154.0 38.1L132.0 50.8M132.0 76.2L132.0 50.8M154.0 38.1L132.0 76.2M132.0 76.2L176.0 76.2M176.0 76.2L154.0 38.1M154.0 38.1L154.0 63.5M132.0 76.2L154.0 63.5M176.0 76.2L154.0 63.5M-44.0 76.2L0.0 76.2M0.0 76.2L-22.0 114.3M-22.0 114.3L-44.0 76.2M-44.0 76.2L-22.0 88.9M0.0 76.2L-22.0 88.9M-22.0 114.3L-22.0 88.9M0.0 76.2L-22.0 114.3M-22.0 114.3L22.0 114.3M22.0 114.3L0.0 76.2M0.0 76.2L0.0 101.6M-22.0 114.3L0.0 101.6M22.0 114.3L0.0 101.6M0.0 76.2L44.0 76.2M44.0 76.2L22.0 114.3M22.0 114.3L0.0 76.2M0.0 76.2L22.0 88.9M44.0 76.2L22.0 88.9M22.0 114.3L22.0 88.9M44.0 76.2L22.0 114.3M22.0 114.3L66.0 114.3M66.0 114.3L44.0 76.2M44.0 76.2L44.0 101.6M22.0 114.3L44.0 101.6M66.0 114.3L44.0 101.6M44.0 76.2L88.0 76.2M88.0 76.2L66.0 114.3M66.0 114.3L44.0 76.2M44.0 76.2L66.0 88.9M88.0 76.2L66.0 88.9M66.0 114.3L66.0 88.9M88.0 76.2L66.0 114.3M66.0 114.3L110.0 114.3M110.0 114.3L88.0 76.2M88.0 76.2L88.0 101.6M66.0 114.3L88.0 101.6M110.0 114.3L88.0 101.6M88.0 76.2L132.0 76.2M132.0 76.2L110.0 114.3M110.0 114.3L88.0 76.2M88.0 76.2L110.0 88.9M132.0 76.2L110.0 88.9M110.0 114.3L110.0 88.9M132.0 76.2L110.0 114.3M110.0 114.3L154.0 114.3M154.0 114.3L132.0 76.2M132.0 76.2L132.0 101.6M110.0 114.3L132.0 101.6M154.0 114.3L132.0 101.6' fill='none' stroke='%231f3b2d' stroke-width='.7'/%3E%3C/svg%3E");background-blend-mode:normal;border-radius:18px;padding:22px;position:relative;overflow:hidden;max-width:360px;margin-inline:auto;width:100%}
+.plate::before{content:"";position:absolute;inset:0;background:#f5f3ec;opacity:.9}
+.plate img{position:relative;display:block;width:100%;height:auto}
+.origin h2+p{margin-top:14px}
+.motto{font-family:var(--font-latin);font-weight:900;letter-spacing:.12em;font-size:.95rem;margin-top:14px;color:var(--mikan-ink)}
+/* 事業カードに、その事業の色 */
+.card.c-zero{background:radial-gradient(1.5px 1.5px at 22% 30%,#fff9,transparent 60%),radial-gradient(1.5px 1.5px at 70% 18%,#fff7,transparent 60%),radial-gradient(1.5px 1.5px at 86% 72%,#fff6,transparent 60%),radial-gradient(1.5px 1.5px at 40% 82%,#fff5,transparent 60%),#05070a;color:#eef6f3;border-color:#1c3a34;box-shadow:0 0 22px rgba(98,230,196,.10) inset}
+.card.c-zero .no{color:#62e6c4;font-family:var(--font-latin)}.card.c-zero h3{font-family:var(--font-latin),var(--font-body)}.card.c-zero p{color:#a4b8b2}.card.c-zero .chip{background:#0e2a25;color:#62e6c4}.card.c-zero:hover{border-color:#62e6c4}
+.card.c-ai{background:linear-gradient(160deg,#16243a,#0e1828 70%);color:#eef2f8;border-color:#27385a}
+.card.c-ai .no{color:#f08a3c}.card.c-ai p{color:#a9b6c9}.card.c-ai .chip{background:#3a2716;color:#f6a465}.card.c-ai:hover{border-color:#f08a3c}
+/* ---- ZERO ONE（イベント）: 宇宙の黒とネオン ---- */
+html:has(body.t-zero){background:#05070a}
+body.t-zero{--paper:#05070a;--surface:#0a1013;--alt:#070c0f;--ink:#eef6f3;--muted:#a4b8b2;--line:#1b2c2a;--mikan:#62e6c4;--mikan-ink:#62e6c4;--mikan-soft:#0e2a25;--tile:#62e6c4;--tile-soft:#0b211d;--leaf:#62e6c4;--brand:#0b211d;color-scheme:dark;
+  background-color:#05070a;background-image:radial-gradient(1px 1px at 12% 18%,#fff9,transparent 60%),radial-gradient(1px 1px at 38% 62%,#fff6,transparent 60%),radial-gradient(1.4px 1.4px at 64% 28%,#fffb,transparent 60%),radial-gradient(1px 1px at 82% 76%,#fff7,transparent 60%),radial-gradient(1px 1px at 52% 90%,#fff5,transparent 60%),radial-gradient(1px 1px at 92% 12%,#fff6,transparent 60%);background-size:260px 260px}
+.t-zero .band,.t-ai .band{display:none}
+.t-zero .bar,.t-ai .bar{background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.t-zero h1,.t-zero h2,.t-zero h3{font-family:var(--font-latin),var(--font-body);font-weight:900;letter-spacing:.01em}
+.t-zero .sec-alt{background:rgba(98,230,196,.035);border-block:1px solid rgba(98,230,196,.12)}
+.t-zero .btn.solid,.t-ai .btn.solid{color:#06110e}
+.t-zero .box,.t-zero .steps li,.t-zero .faq details,.t-zero .lineup li{border-color:rgba(98,230,196,.28);box-shadow:0 0 26px rgba(98,230,196,.07) inset}
+.t-zero .sec-cta,.t-ai .sec-cta{background:var(--tile-soft);color:var(--ink);border-top:1px solid var(--line)}
+.neon{font-family:var(--font-latin);font-weight:900;text-transform:uppercase;color:#7ff0d2;text-shadow:0 0 12px rgba(98,230,196,.85),0 0 42px rgba(98,230,196,.45);letter-spacing:.03em}
+.zhero{padding-block:0 44px}
+.zvid{position:relative;height:min(72vh,600px);height:min(72svh,600px);overflow:hidden;background:#05070a}
+.zvid video{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.zvid::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,#05070a)}
+.zhero h1 .neon{display:block;font-size:clamp(2rem,9.4vw,4.2rem);line-height:1.1;margin-bottom:10px}
+.zhero h1{font-size:clamp(1.3rem,4.6vw,2rem)}
+.next .when{font-size:clamp(2.3rem,11vw,5rem);line-height:1.05;margin:4px 0 10px}
+.next .when i{font-style:normal;opacity:.7}
+.next .table{margin-top:18px}
+.rec{margin-top:18px;border:1px solid #62e6c4;border-radius:12px;padding:14px 16px;box-shadow:0 0 22px rgba(98,230,196,.18)}
+.rec b{display:inline-block;font-family:var(--font-latin),var(--font-body);background:#62e6c4;color:#06110e;border-radius:6px;padding:2px 10px;margin-right:10px;font-size:.86rem}
+/* ---- AI秘書ハヤテ: 夜の紺・みかん・トサカの赤 ---- */
+html:has(body.t-ai){background:#0e1828}
+body.t-ai{--paper:#0e1828;--surface:#16243a;--alt:#111e31;--ink:#eef2f8;--muted:#a9b6c9;--line:#27385a;--mikan:#f08a3c;--mikan-ink:#f6a465;--mikan-soft:#3a2716;--tile:#8fb8f5;--tile-soft:#1a2c4a;--leaf:#d23a2f;--brand:#1a2c4a;color-scheme:dark}
+.t-ai .eyebrow::before{background:#d23a2f}
+.ahero{position:relative;overflow:hidden;padding-block:44px 40px;background:radial-gradient(70% 90% at 100% 0,rgba(226,116,31,.22),transparent 60%),linear-gradient(170deg,#16243a,#0e1828 70%)}
+.ahero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#e2741f 40%,#d23a2f 60%,transparent)}
+.alogo{display:block;width:104px;height:104px;border-radius:24px;margin-bottom:20px;box-shadow:0 14px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+@media (prefers-reduced-motion:no-preference){.js .alogo{animation:aslide .9s cubic-bezier(.16,.84,.24,1) .15s both}}
+@keyframes aslide{from{opacity:0;transform:translateX(-46px) skewX(-10deg)}to{opacity:1;transform:none}}
+/* ---- 活動ブログ ---- */
+.posts{display:grid;gap:12px}
+.postcard{display:grid;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:12px;padding:20px 18px}
+.postcard time,.pagehead time{font-family:var(--font-latin);font-size:.76rem;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.postcard h2{font-size:1.25rem}.postcard p{color:var(--muted);font-size:.92rem;margin:0}
+.postcard .more{font-size:.84rem;font-weight:700;color:var(--mikan-ink)}
+.postcard:hover{border-color:var(--mikan)}
+.post{gap:16px;font-size:1.02rem}
+.post h2{font-size:1.25rem;margin-top:22px;padding-left:12px;border-left:4px solid var(--mikan)}
+@media (min-width:760px){.zvid{height:min(64vh,560px);height:min(64svh,560px)}.zvid video{object-fit:contain}}
+[hidden]{display:none!important}
